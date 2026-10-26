@@ -6,7 +6,11 @@ import os
 
 root=Tk()
 
+frame=Frame(root)
+frame.pack(side=BOTTOM,padx=15, pady=15)
 
+label=Label(root)
+label.pack()
 
 root.title("Image Viewer")
 root.geometry("800x600")
