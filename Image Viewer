@@ -1,3 +1,4 @@
+from ast import Lambda
 from tkinter import *
 from tkinter import filedialog
 import tkinter as tk
@@ -11,6 +12,12 @@ frame.pack(side=BOTTOM,padx=15, pady=15)
 
 label=Label(root)
 label.pack()
+
+button=Button(frame, text='Select Image', command=showimage)
+button.pack(side=tk.LEFT)
+
+button2=Button(frame, text='Exit', command=lambda:exit())
+button2.pack(side=tk.LEFT, padx=12)
 
 root.title("Image Viewer")
 root.geometry("800x600")
