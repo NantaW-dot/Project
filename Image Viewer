@@ -1,9 +1,13 @@
-from ast import Lambda
 from tkinter import *
 from tkinter import filedialog
 import tkinter as tk
-from PIL import image,ImageTk
+from PIL import Image,ImageTk
 import os
+
+def showimage():
+    filename=filedialog.askopenfilename(initialdir=os.getcwd(), title='Select Image',
+                                        filetypes=(('JPG File','*.jpg'),('PNG File','*.png'),('All Files','*.*')))
+   
 
 root=Tk()
 
