@@ -7,7 +7,10 @@ import os
 def showimage():
     filename=filedialog.askopenfilename(initialdir=os.getcwd(), title='Select Image',
                                         filetypes=(('JPG File','*.jpg'),('PNG File','*.png'),('All Files','*.*')))
-   
+    image=Image.open(filename)
+    image=ImageTk.PhotoImage(image)
+    label.config(image=image)
+    label.image=image
 
 root=Tk()
 
