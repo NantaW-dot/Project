@@ -1,0 +1,31 @@
+from tkinter import *
+from tkinter import filedialog
+import tkinter as tk
+from PIL import Image,ImageTk
+import os
+
+def showimage():
+    filename=filedialog.askopenfilename(initialdir=os.getcwd(), title='Select Image',
+                                        filetypes=(('JPG File','*.jpg'),('PNG File','*.png'),('All Files','*.*')))
+    image=Image.open(filename)
+    image=ImageTk.PhotoImage(image)
+    label.config(image=image)
+    label.image=image
+
+root=Tk()
+
+frame=Frame(root)
+frame.pack(side=BOTTOM,padx=15, pady=15)
+
+label=Label(root)
+label.pack()
+
+button=Button(frame, text='Select Image', command=showimage)
+button.pack(side=tk.LEFT)
+
+button2=Button(frame, text='Exit', command=lambda:exit())
+button2.pack(side=tk.LEFT, padx=12)
+
+root.title("Image Viewer")
+root.geometry("800x600")
+root.mainloop()
